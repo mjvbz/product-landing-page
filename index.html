@@ -1,0 +1,331 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<head>
+  <title>build a Product Landing Page - itsMeShon</title>
+</head>
+
+<style>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet" type="text/css">;
+
+body {
+  background-color: hsl(210, 45%, 60%);
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", Helvetica, sans-serif;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: hsl(45, 50%, 90%);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding-top: 5px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 750px;
+  position: relative;
+  top: 40px;
+  z-index: 0;
+}
+
+#header-img {
+  grid-column: 1;
+  width: 100%;
+  align-self: center;
+}
+
+#nav-bar {
+  grid-column: 2;
+  align-self: center;
+  justify-self: right;
+  display: flex;
+  margin-right: 5px;
+}
+
+.nav-link {
+  text-decoration: inherit;
+  color: inherit;
+  margin: 5px;
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#intro h2 {
+  margin-bottom: 15px;
+}
+
+#form {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#features {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.feature-section {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+
+.feature-img {
+  width: 50%;
+  justify-self: center;
+  align-self: start;
+  margin-top: 25px;
+}
+
+#video {
+  margin: auto;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.product-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: groove;
+  border-color: lightgray;
+  border-width: 1px;
+  padding-bottom: 10px;
+}
+
+.product-header {
+  margin-bottom: -20px;
+}
+
+.product-price {
+  font-size: 130%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.product-desc {
+  list-style: none;
+}
+
+footer {
+  background-color: hsl(45, 50%, 90%);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+#footer-nav {
+  display: flex;
+  grid-gap: 10px;
+}
+
+footer p {
+  font-size: 85%;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.btn {
+  text-transform: uppercase;
+  background-color: hsl(45, 50%, 80%);
+  font-weight: bold;
+  border-radius: 6px;
+  height: 20px;
+  
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  animation-name: background-color;
+  animation-duration: 150ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes background-color {
+    100% {
+      background-color: hsl(45, 70%, 65%);
+    }
+}
+
+@media(max-width: 590px) {
+  body {
+    font-size: 85%;
+  }
+  header {
+    grid-template-columns: 255px 1fr;
+  }
+  main {
+    top: 55px;
+  }
+ 
+  #nav-bar {
+    flex-direction: column;
+  }
+  .nav-link {
+    margin: 2px;
+  }
+  
+  .feature-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .feature-img {
+    display: none;
+  }
+  
+  #products {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  .product-section { 
+    margin-top: 10px;
+  }
+  
+  footer {
+    margin-top: 65px; 
+  }
+}
+
+@media(max-width: 450px) {
+  body {
+    font-size: 75%;
+  }
+  header {
+    grid-template-columns: 210px 1fr;
+  }
+}
+</style>
+
+<body>
+  <header id="header">
+    <img src="https://s3.amazonaws.com/freecodecamp/original_trombones.png" alt="original trombones logo" id="header-img">
+    <nav id="nav-bar">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#video" class="nav-link">How it works</a>
+      <a href="#products" class="nav-link">Pricing</a>
+    </nav>
+  </header>
+  
+  <main>
+    <article id="intro">
+      <h2>Handcrafted, home-made masterpieces</h2>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <input type="email" name="email" placeholder="enter your email" id="email" required></input>
+        <input type="submit" id="submit" value="Get Started" class="btn">
+      </form>
+    </article>
+  
+    <article id="features">
+      <section class="feature-section">
+        <img src="https://www.qmsuk.com/wp-content/themes/qms2016/assets/images/icons/common/tick.png" class="feature-img">
+        <div>
+          <h2>Premium Materials</h2>
+          <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+        </div>
+      </section>
+      <section class="feature-section">
+        <img src="https://www.qmsuk.com/wp-content/themes/qms2016/assets/images/icons/common/tick.png" class="feature-img">
+        <div>
+          <h2>Fast Shipping</h2>
+          <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+        </div>
+      </section>
+      <section class="feature-section">
+        <img src="https://www.qmsuk.com/wp-content/themes/qms2016/assets/images/icons/common/tick.png" class="feature-img">
+        <div>
+          <h2>Quality Assurance</h2>
+          <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+        </div>
+      </section>
+    </article>
+  
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" id="video" allowfullscreen></iframe>
+  
+    <article id="products">
+      <section class="product-section">
+        <div class="product-header">
+          <h2>Tenor Trombone</h2>
+        </div>
+        <div class="product-content">
+          <p class="product-price">$600</p>
+          <ol class="product-desc">
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+        </div>
+        <button class="btn">select</button>
+      </section>
+      <section class="product-section">
+        <div class="product-header">
+          <h2>Bass Trombone </h2>
+        </div>
+        <div class="product-content">
+          <p class="product-price">$900</p>
+          <ol class="product-desc">
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+        </div>
+        <button class="btn">select</button>
+      </section>
+      <section class="product-section">
+        <div class="product-header">
+          <h2>Valve Trombone</h2>
+        </div>
+        <div class="product-content">
+          <p class="product-price">$1200</p>
+          <ol class="product-desc">
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+        </div>
+        <button class="btn">select</button>
+      </section>
+    </article>
+  
+  </main>
+  
+  <footer>
+    <nav id="footer-nav">
+      <a href="" class="nav-link">Privacy</a>
+      <a href="" class="nav-link">Terms</a>
+      <a href="" class="nav-link">Contact</a>
+    </nav>
+    <p>Copyright 2021, itsMeShon</p>
+  </footer>
+</body>
